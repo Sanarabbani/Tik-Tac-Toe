@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+         .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+         }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            .btn {
+                width: 100px;
+                height: 100px;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+                font-size: 24px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .btn:hover {
+                background-color: #e0e0e0;
+            }
+            .btn:active {
+                background-color: #771c1c;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            button:active {
+                background-color: #004085;
+            }
+            .msg-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin-bottom: 50px;
+            }
+            .msg-container h1 {
+                margin-bottom: 20px;
+            }
+            .msg-container .msg {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .hide {
+                display: none;
+            }
+    </style>
+  </head>
+  <body>
+
+    <div class="msg-container hide">
+      <h1>Winner</h1>
+      <div id="msg"></div>
+      <button class="play-again">Play Again</button>
+    </div>
+    <div class="main">
+
+    <h1>Tic Tac Toe </h1>
+    <div class="container">
+      <button class="btn"></button>
+      <button class="btn"></button
+      ><button class="btn"></button>
+      <button class="btn"></button
+      ><button class="btn"></button>
+      <button class="btn"></button
+      ><button class="btn"></button>
+      <button class="btn"></button
+      ><button class="btn"></button>
+    </div>
+    <button id="reset">Reset</button>
+</div>
+    <script src="javasrcipt.js"></script>
+  </body>
+</html>
