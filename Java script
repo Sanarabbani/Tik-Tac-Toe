@@ -1,0 +1,82 @@
+let btn = document.querySelectorAll(".btn");
+let reset = document.querySelector("#reset");
+let result = document.querySelector("#msg");
+let showWinner = document.querySelector(".msg-container");
+let newgame = document.querySelector(".play-again");
+// define html names by their new names 
+let turn = true;
+
+let win = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+]
+
+
+// pairs that can be winner
+btn.forEach((e) => { 
+    e.addEventListener("click", () => {
+        if(turn){
+            e.innerHTML = "X";
+            e.style.color = "red";
+            turn = false;
+
+        }else{
+            e.innerHTML = "O";
+            e.style.color = "blue";
+            turn = true;
+        }
+        e.disabled = true;
+    checkWin();
+    });
+})
+//conditions 
+
+
+let checkWin = () => {
+    for (const i of win) {
+        console.log(i[0], i[1], i[2]);
+
+        // console.log(btn[i [0]].innerHTML, btn[i[1]].innerHTML, btn[i[2]].innerHTML);
+        let val1 = btn[i[0]].innerHTML;
+        let val2 = btn[i[1]].innerHTML;
+        let val3 = btn[i[2]].innerHTML;
+        if(val1 != "" && val2 != "" && val3 != "") {
+            if (val1 == val2 && val2 == val3) {
+                result.innerHTML = `Winner is ${val1}`;
+                showwin(val1);
+            }
+        }
+    }
+}
+btndisable = () => {
+    btn.forEach((element) => {
+        element.disabled = true;
+    });
+}
+ let showwin = (winner) => {
+    result.innerHTML = `Winner is ${winner}`;
+    showWinner.classList.remove("hide");
+    // btndisable()
+ }
+
+ let resetGame = () => {
+    turn = true;
+    btnenable();
+   
+
+ }
+    let btnenable = () => {
+        btn.forEach((element) => {
+            element.disabled = false;
+            element.innerText  = "";
+            showWinner.classList.add("hide");
+        });
+    }
+    reset.addEventListener("click",  resetGame);
+    newgame.addEventListener("click",  resetGame);
